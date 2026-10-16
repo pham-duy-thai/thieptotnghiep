@@ -15,9 +15,12 @@ create table if not exists public.wishes (
 
 create table if not exists public.heart_stats (
   id bigint generated always as identity primary key,
+  name text,
   amount integer not null default 1 check (amount = 1),
   created_at timestamptz not null default now()
 );
+
+alter table public.heart_stats add column if not exists name text;
 
 alter table public.rsvps enable row level security;
 alter table public.wishes enable row level security;

@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <style>
+    .activity-flight{position:fixed;z-index:8;left:-90%;top:var(--flight-top,35vh);display:flex;align-items:center;gap:10px;max-width:min(520px,88vw);padding:10px 17px 10px 12px;border:1px solid #fff9;border-radius:999px;background:linear-gradient(110deg,#fffaf2f2,#f6dedcf2);color:#5d2428;box-shadow:0 8px 34px #4010184a;pointer-events:none;white-space:normal;animation:activity-flight 8s linear forwards}.activity-flight .flight-icon{font-size:22px;flex:none}.activity-flight .flight-copy{font:500 13px/1.45 "DM Sans",sans-serif}.activity-flight strong{color:#671c24}.activity-flight.is-heart{border-color:#ffabbc;background:linear-gradient(110deg,#fff5fa,#ffd4e0);box-shadow:0 0 24px #ff3a7777,0 8px 34px #4010184a}.activity-flight.is-heart .flight-icon{font-size:34px;filter:drop-shadow(0 0 10px #ff235f);animation:heart-glow .75s ease-in-out infinite alternate}.activity-flight.is-wish{background:linear-gradient(110deg,#fffaf2,#ffefcd)}@keyframes activity-flight{0%{left:-95%;opacity:0;transform:translateY(12px) scale(.78)}8%{opacity:1}18%{transform:translateY(-7px) scale(1.04)}28%{transform:translateY(0) scale(1)}88%{opacity:1}100%{left:110%;opacity:0;transform:translateY(-10px) scale(.96)}}@keyframes heart-glow{to{transform:scale(1.35) rotate(12deg);filter:drop-shadow(0 0 18px #ff164d)}}@media(prefers-reduced-motion:reduce){.activity-flight,.activity-flight .flight-icon{animation-duration:.01ms!important}}
+  </style>
+  <style>
     :root{--wine:#671c24;--wine2:#85343a;--rose:#ead8d2;--paper:#fffdf9;--ink:#382b29;--muted:#8b7770;--gold:#c5a16a}
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#f0ece8;color:var(--ink);font-family:"DM Sans",sans-serif}a{color:inherit}.page{max-width:470px;margin:0 auto;background:var(--paper);min-height:100vh;box-shadow:0 0 50px #382b2912;overflow:hidden}.hero{min-height:690px;position:relative;padding:46px 28px 36px;text-align:center;color:#fff;background:linear-gradient(180deg,#32101433,#47141bd9 70%),radial-gradient(ellipse at 50% 30%,#a9686680 0,transparent 46%),linear-gradient(145deg,#d6bdb0,#9d7470 45%,#49262a);display:flex;flex-direction:column;align-items:center;justify-content:flex-end}.hero:before,.hero:after{content:"";position:absolute;inset:18px;border:1px solid #e7cda077;pointer-events:none}.hero:after{inset:24px;border-color:#fff3}.hero-art{position:absolute;inset:45px 34px 195px;display:grid;place-items:center;opacity:.82}.arch{position:absolute;width:82%;height:100%;border:1px solid #e6d0b5aa;border-bottom:0;border-radius:50% 50% 0 0/36% 36% 0 0;background:linear-gradient(180deg,#f3ded522,#4c252a20)}.laurel{position:absolute;font-size:120px;color:#f2dfc9a8;top:18%;font-family:serif;letter-spacing:-35px}.hero-copy{position:relative;z-index:1}.eyebrow{letter-spacing:.28em;text-transform:uppercase;font-size:10px}.hero h1{font:500 39px/1.1 "Playfair Display",serif;margin:18px 0 10px}.hero .study{font:italic 17px "Playfair Display",serif;color:#f5e5d5}.hero .uni{margin-top:9px;font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:#f0dfd6}.hero .date{margin-top:26px;font-size:12px;letter-spacing:.18em}.scroll{font-size:9px;letter-spacing:.22em;text-transform:uppercase;margin-top:32px;color:#f2dbce}.section{padding:58px 30px;text-align:center}.section-kicker{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--wine2)}h2{font:500 30px/1.2 "Playfair Display",serif;color:var(--wine);margin:13px 0 20px}.intro{font:italic 17px/1.75 "Playfair Display",serif;color:#6f5c55;margin:0 auto;max-width:330px}.divider{display:flex;align-items:center;gap:12px;margin:27px auto;color:var(--gold);max-width:210px}.divider:before,.divider:after{content:"";height:1px;background:#d8c3a3;flex:1}.divider span{font-size:16px}.details{background:#f5eee8}.detail-card{border:1px solid #d8c6b7;padding:27px 18px;position:relative}.detail-card:before{content:"";position:absolute;inset:6px;border:1px solid #e5d7cc;pointer-events:none}.detail-card>*{position:relative}.big-date{font:500 31px "Playfair Display",serif;color:var(--wine);margin:9px 0}.weekday{font-size:10px;letter-spacing:.22em;color:var(--wine2);text-transform:uppercase}.place{font:18px "Playfair Display",serif;margin:16px 0 6px}.address{font-size:13px;color:var(--muted);line-height:1.7}.map-link,.rsvp-link{display:inline-block;margin-top:20px;background:var(--wine);color:white;text-decoration:none;padding:12px 18px;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.calendar{padding-top:50px;padding-bottom:58px}.month{font:24px "Playfair Display",serif;color:var(--wine);margin:8px}.year{font-size:11px;letter-spacing:.2em;color:var(--muted);margin-bottom:23px}.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;font-size:11px}.grid span{padding:9px 0}.grid .dow{font-size:9px;color:var(--muted);letter-spacing:.07em}.marked{background:var(--wine);color:#fff;border-radius:50%;font-weight:700}.quote{background:var(--wine);color:#f8ede4;padding:54px 34px;text-align:center}.quote p{font:italic 24px/1.5 "Playfair Display",serif;margin:0}.quote small{display:block;margin-top:17px;font-size:10px;letter-spacing:.15em;color:#e1c9b7;text-transform:uppercase}.closing{padding:55px 30px 60px;text-align:center}.closing h2{font-size:29px}.closing p{font:italic 16px/1.7 "Playfair Display",serif;color:#715d56}.footer{background:#f5eee8;text-align:center;padding:25px;font-size:10px;letter-spacing:.13em;color:#927d73}.footer strong{display:block;font:18px "Playfair Display",serif;color:var(--wine);margin-bottom:6px}.icon{font-size:20px;color:var(--wine2);margin:12px}
     .envelope-screen{position:fixed;inset:0;z-index:10;display:grid;place-items:center;background:#f0f1f3;padding:24px;transition:opacity .75s ease,visibility .75s ease}.envelope-screen.is-open{opacity:0;visibility:hidden;pointer-events:none}.envelope{width:min(450px,calc((100vh - 48px)*.56));height:min(820px,calc(100vh - 48px));min-height:510px;position:relative;overflow:hidden;border-radius:5px;background-color:#a65d5d;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg fill='none' stroke='%236e3032' stroke-opacity='.23' stroke-width='1'%3E%3Cpath d='M22 32c10-20 22-10 17 0-4 7-16 9-17 0zm2 1c6-3 9-8 7-13M95 17c15 3 15 19 3 20-10 1-14-13-3-20zm-2 3c-3-8 4-13 10-12M59 89c-14-16 7-24 14-10 8-15 24-4 12 10 14 9 2 23-12 16-9 15-24 5-14-7-17-1-15-17 0-9zm14-10v28m-12-17h24M124 95c9-13 20-2 12 5 11 2 8 14-2 11-4 11-16 6-11-3-11-3-8-13 1-13zm1 3 10 9m-9 0 8-8M14 119c11-3 14 10 4 12 7 8-5 15-9 6-10 3-13-9-3-12-4-8 3-12 8-6zm-3 4 5 10m1-10-8 8M133 39c-12-8-2-18 5-10 5-10 16-4 10 5 7 7-2 15-8 8-7 8-14 0-7-7zM36 65c-9-7-1-14 5-8 3-8 12-4 8 3 5 6-2 11-7 6-5 6-11 1-6-4z'/%3E%3C/g%3E%3C/svg%3E");box-shadow:0 2px 10px #40201f35}.envelope:before{content:"";position:absolute;inset:0 50% 0 auto;width:1px;background:#71363745;box-shadow:2px 0 6px #55292b22}.envelope:after{content:"";position:absolute;inset:61% 0 auto;height:1px;background:#71363728}.envelope-center{position:absolute;inset:0;z-index:1;display:grid;place-items:center;pointer-events:none}.wax-seal{width:108px;height:108px;border-radius:50%;display:grid;place-items:center;color:#701619;font:56px/1 "Playfair Display",serif;background:radial-gradient(circle at 36% 28%,#ff9a91 0,#e54442 23%,#a90e1a 56%,#6e0710 68%,#e84741 75%,#97131c 88%,#4b1014 100%);border:3px solid #8a1118;box-shadow:inset 0 2px 4px #ffd3c277,inset 0 -5px 8px #4c080c99,0 3px 8px #4c111477;text-shadow:0 1px 2px #ffc0a8}.open-envelope{position:absolute;z-index:2;bottom:40px;left:50%;transform:translateX(-50%);border:0;border-radius:30px;padding:12px 31px;background:#f0cf82;color:#382b20;font:500 15px "Playfair Display",serif;cursor:pointer;box-shadow:0 3px 9px #5926243b;transition:transform .2s,background .2s}.open-envelope:hover{transform:translateX(-50%) translateY(-2px);background:#f7dda0}.open-envelope:focus-visible{outline:3px solid white;outline-offset:3px}.envelope-screen.is-opening .envelope{animation:open-letter .75s ease both}@keyframes open-letter{to{transform:translateY(-24px) scale(1.025);opacity:.45}}body.has-envelope{overflow:hidden}.page{transition:filter .7s ease}body.has-envelope .page{filter:blur(5px)}body.has-envelope .envelope-screen.is-open+.page{filter:none}
@@ -112,6 +115,7 @@
     </section>
     <footer class="footer"><strong>Phạm Duy Thái</strong>MỘT NGÀY ĐÁNG NHỚ · 2026</footer>
   </main>
+  <div id="activityFlights" aria-hidden="true"></div>
   <audio id="backgroundMusic" src="snaptik.vn_7673337476156853525.mp3" preload="auto" loop></audio>
   <button class="scroll-toggle" id="scrollToggle" type="button" aria-pressed="false" hidden>Tạm dừng cuộn</button>
   <button class="music-toggle" id="musicToggle" type="button" aria-label="Bật nhạc" title="Bật nhạc">♫</button>
@@ -179,8 +183,10 @@
     albumFrame.addEventListener("touchstart", () => { window.clearInterval(albumTimer); albumProgress.classList.remove("running"); }, { passive: true });
     albumFrame.addEventListener("touchend", restartAlbumTimer, { passive: true });
     let heartCount = 0;
-    let newestPublicWishId = null;
     let hasLoadedPublicActivity = false;
+    let activityEvents = [];
+    let activityCursor = 0;
+    let activityTimer = null;
     function launchHeart() {
       const heart = document.createElement("span");
       heart.className = "floating-heart big";
@@ -198,6 +204,37 @@
       window.setTimeout(() => bubble.remove(), 7100);
       for (let i = 0; i < 3; i++) window.setTimeout(launchHeart, i * 180);
     }
+    function showActivityFlight(event) {
+      const flight = document.createElement("div");
+      flight.className = "activity-flight" + (event.type === "heart" ? " is-heart" : event.type === "wish" ? " is-wish" : "");
+      flight.style.setProperty("--flight-top", (14 + Math.random() * 70) + "vh");
+      const icon = document.createElement("span");
+      icon.className = "flight-icon";
+      icon.textContent = event.type === "heart" ? "💖" : event.type === "wish" ? "💌" : "🎓";
+      const copy = document.createElement("span");
+      copy.className = "flight-copy";
+      const name = document.createElement("strong");
+      name.textContent = event.name;
+      copy.append(name, document.createTextNode(event.type === "wish" ? " gửi lời chúc: “" + event.detail + "”" : " " + event.detail));
+      flight.append(icon, copy);
+      document.getElementById("activityFlights").appendChild(flight);
+      window.setTimeout(() => flight.remove(), 8200);
+      if (event.type === "heart") {
+        for (let i = 0; i < 4; i++) window.setTimeout(launchHeart, i * 120);
+      }
+    }
+    function startActivityTicker() {
+      if (activityTimer || !activityEvents.length) return;
+      activityTimer = window.setInterval(() => {
+        if (!activityEvents.length) return;
+        const event = activityEvents[activityCursor % activityEvents.length];
+        activityCursor++;
+        showActivityFlight(event);
+      }, 3200);
+      const first = activityEvents[activityCursor % activityEvents.length];
+      activityCursor++;
+      showActivityFlight(first);
+    }
     function appendActivity(container, text, name) {
       const row = document.createElement("div");
       row.className = "activity-item";
@@ -208,7 +245,7 @@
       container.appendChild(row);
       return row;
     }
-    async function refreshPublicActivity(animateNewWishes = false) {
+    async function refreshPublicActivity() {
       try {
         const response = await fetch("/api/public-activity", { cache: "no-store" });
         const data = await response.json();
@@ -225,12 +262,18 @@
         document.getElementById("heartCount").textContent = data.hearts;
         heartCount = data.hearts;
         document.getElementById("publicSummary").textContent = attendees.length + " người xác nhận · " + data.hearts + " lượt thả tim";
-        const newestId = data.wishes[0]?.id ?? null;
-        if (animateNewWishes && hasLoadedPublicActivity && newestId && newestId !== newestPublicWishId) {
-          const fresh = data.wishes.filter((item) => item.id > (newestPublicWishId || 0)).reverse();
-          fresh.slice(-5).forEach((item) => showWish(item.name, item.message));
+        const events = data.events || [];
+        if (!hasLoadedPublicActivity) {
+          activityEvents = events;
+        } else {
+          const knownIds = new Set(activityEvents.map((item) => item.id));
+          const freshEvents = events.filter((item) => !knownIds.has(item.id));
+          if (freshEvents.length) {
+            activityEvents = [...freshEvents.reverse(), ...activityEvents].slice(0, 100);
+            activityCursor = 0;
+          }
         }
-        newestPublicWishId = newestId;
+        startActivityTicker();
         hasLoadedPublicActivity = true;
       } catch (error) {
         document.getElementById("publicSummary").textContent = "Chưa tải được dữ liệu chung. Hãy thử tải lại trang.";
@@ -238,7 +281,7 @@
       }
     }
     refreshPublicActivity();
-    window.setInterval(() => refreshPublicActivity(true), 12000);
+    window.setInterval(refreshPublicActivity, 12000);
     document.getElementById("rsvpForm").addEventListener("submit", function (event) {
       event.preventDefault();
       const name = document.getElementById("guestName").value.trim();
@@ -276,10 +319,16 @@
         .finally(() => { sendButton.disabled = false; });
     });
     document.getElementById("heartButton").addEventListener("click", function () {
+      const name = document.getElementById("guestName").value.trim();
+      if (!name) {
+        document.getElementById("socialStatus").textContent = "Nhập họ tên ở mục xác nhận tham dự trước khi thả tim nhé.";
+        document.getElementById("guestName").focus();
+        return;
+      }
       launchHeart();
-      fetch("/api/heart", { method: "POST" })
+      fetch("/api/heart", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }) })
         .then(async (response) => { const data = await response.json(); if (!response.ok) throw new Error(data.error || "Không ghi nhận được tim."); return data; })
-        .then((data) => { heartCount = data.count; document.getElementById("heartCount").textContent = heartCount; document.getElementById("publicSummary").textContent = document.getElementById("publicSummary").textContent.replace(/\d+ lượt thả tim/, heartCount + " lượt thả tim"); })
+        .then((data) => { heartCount = data.count; document.getElementById("heartCount").textContent = heartCount; document.getElementById("publicSummary").textContent = document.getElementById("publicSummary").textContent.replace(/\d+ lượt thả tim/, heartCount + " lượt thả tim"); refreshPublicActivity(); })
         .catch(() => { document.getElementById("socialStatus").textContent = "Hiệu ứng tim đã chạy, nhưng lượt tim chưa lưu được."; });
     });
     document.getElementById("cheerButton").addEventListener("click", function () {
