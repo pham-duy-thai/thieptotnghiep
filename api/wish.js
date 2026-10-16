@@ -1,4 +1,4 @@
-import { getSupabase, json } from "./_supabase.js";
+import { getSupabase, json, explainSupabaseError } from "./_supabase.js";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return json(res, 405, { error: "Method not allowed" });
@@ -11,6 +11,6 @@ export default async function handler(req, res) {
     return json(res, 201, { ok: true });
   } catch (error) {
     console.error("Wish insert failed", error);
-    return json(res, 500, { error: "Chưa lưu được lời chúc. Vui lòng thử lại sau." });
+    return json(res, 500, { error: explainSupabaseError(error) });
   }
 }

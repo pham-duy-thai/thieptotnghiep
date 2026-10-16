@@ -2,20 +2,28 @@
 import { createClient } from "@supabase/supabase-js";
 
 export function getSupabase() {
-  const url = process.env.SUPABASE_URL;
+  const rawUrl = process.env.SUPABASE_URL || "";
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-  console.log("Supabase config check:", {
-    hasUrl: Boolean(url),
-    hasKey: Boolean(key),
-    urlLooksValid: Boolean(
-      url?.startsWith("https://") && url?.endsWith(".supabase.co")
-    ),
-  });
+  // Loại bỏ khoảng trắng, /rest/v1 và dấu / ở cuối URL
+  const url = rawUrl
+    .trim()
+    .replace(/\/rest\/v1\/?$/i, "")
+    .replace(/\/+$/, "");
 
   if (!url || !key) {
     throw new Error("Supabase chưa được cấu hình trên Vercel.");
   }
+
+  if (!/^https:\/\/[a-z0-9-]+\.supabase\.co$/i.test(url)) {
+    throw new Error("SUPABASE_URL không đúng định dạng.");
+  }
+
+  console.log("Supabase config check:", {
+    hasUrl: true,
+    hasKey: Boolean(key),
+    urlLooksValid: true,
+  });
 
   return createClient(url, key, {
     auth: { persistSession: false },
