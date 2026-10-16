@@ -30,6 +30,18 @@ export function getSupabase() {
   });
 }
 
+export function explainSupabaseError(error) {
+  const code = error?.code || "";
+  const message = error?.message || "";
+  if (code === "42P01" || /relation .* does not exist/i.test(message)) return "Chưa có bảng Supabase. Hãy chạy supabase-schema.sql trong SQL Editor.";
+  if (code === "PGRST205" || /could not find the table/i.test(message)) return "Supabase chưa nhận diện bảng. Kiểm tra schema và làm mới API schema cache.";
+  if (code === "42501" || /permission denied|row-level security/i.test(message)) return "Supabase từ chối quyền truy cập. Kiểm tra service role key trong Vercel.";
+  if (/Invalid API key|JWT/i.test(message)) return "SUPABASE_SERVICE_ROLE_KEY không hợp lệ. Cập nhật key trong Vercel rồi deploy lại.";
+  if (/fetch failed|ENOTFOUND|ECONN/i.test(message)) return "Vercel không kết nối được Supabase. Kiểm tra SUPABASE_URL.";
+  if (!process.env.SUPABASE_URL || !process.env.SUPABASE_SERVICE_ROLE_KEY) return "Thiếu SUPABASE_URL hoặc SUPABASE_SERVICE_ROLE_KEY trong Vercel Environment Variables.";
+  return "Lỗi Supabase. Xem Function Logs của Vercel để biết chi tiết.";
+}
+
 export function json(res, status, body) {
   res
     .status(status)
