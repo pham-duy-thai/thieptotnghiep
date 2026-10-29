@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#11150f" />
+    <meta name="description" content="Chơi bi-a 3D Nine-ball ngay trên trình duyệt." />
+    <title>Bi-a 3D | Thiệp tốt nghiệp</title>
+    <style>
+      * { box-sizing: border-box; }
+      html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #11150f; color: #f8f1df; font-family: "DM Sans", system-ui, sans-serif; }
+      .layout { height: 100%; height: 100dvh; display: grid; grid-template-rows: 54px minmax(0, 1fr); }
+      .topbar { z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 max(16px, env(safe-area-inset-right)) 0 max(16px, env(safe-area-inset-left)); border-bottom: 1px solid #d8bd6b55; background: #151912; }
+      .back { color: #f1dda2; text-decoration: none; font-size: 14px; font-weight: 600; white-space: nowrap; }
+      .back:hover, .back:focus-visible { color: #fff; }
+      .title { overflow: hidden; color: #fff9e7; font-size: 12px; letter-spacing: .12em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
+      .credit { color: #b9b6a8; font-size: 11px; text-decoration: none; white-space: nowrap; }
+      .credit:hover, .credit:focus-visible { color: #fff; }
+      iframe { display: block; width: 100%; height: 100%; border: 0; background: #11150f; }
+      .win-overlay { position: fixed; z-index: 5; inset: 0; display: grid; place-items: center; padding: 20px; background: #080b09d9; backdrop-filter: blur(8px); }
+      .win-overlay[hidden] { display: none; }
+      .win-card { width: min(440px, 100%); padding: 36px 28px; border: 1px solid #d9bd73; border-radius: 20px; background: linear-gradient(155deg, #1d2a20, #101710 70%, #2c2113); text-align: center; box-shadow: 0 18px 70px #0009, inset 0 0 35px #e2bc5014; }
+      .win-card .medal { font-size: 40px; }
+      .win-card h1 { margin: 14px 0 8px; color: #f0d98f; font: 600 clamp(25px, 7vw, 34px)/1.15 "Playfair Display", Georgia, serif; }
+      .win-card p { margin: 0 0 24px; color: #e3ddcb; font-size: 14px; line-height: 1.6; }
+      .open-invitation { display: inline-block; padding: 13px 23px; border-radius: 999px; background: #e4ca80; color: #231c10; font-size: 14px; font-weight: 700; text-decoration: none; }
+      .open-invitation:hover, .open-invitation:focus-visible { background: #f4df9f; outline: 3px solid #fff5cc; outline-offset: 3px; }
+      @media (max-width: 520px) { .layout { grid-template-rows: 48px minmax(0, 1fr); } .topbar { gap: 8px; padding-right: max(10px, env(safe-area-inset-right)); padding-left: max(10px, env(safe-area-inset-left)); } .back { font-size: 12px; } .title { font-size: 10px; letter-spacing: .06em; } .credit { font-size: 10px; } }
+    </style>
+  </head>
+  <body>
+    <div class="layout">
+      <header class="topbar">
+        <a class="back" href="../../index.html">‹ Quay lại thiệp mời</a>
+        <span class="title">Bi-a 3D · Nine-ball</span>
+        <a class="credit" href="https://github.com/tailuge/billiards" target="_blank" rel="noopener noreferrer">Mã nguồn mở</a>
+      </header>
+      <iframe
+        title="Trò chơi bi-a 3D Nine-ball"
+        src="billiards/dist/index.html?ruletype=nineball&amp;lod=4&amp;bot=ClawBreak&amp;graduation=1"
+        allow="fullscreen; autoplay; gamepad"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <div class="win-overlay" id="winOverlay" role="dialog" aria-modal="true" aria-labelledby="winTitle" hidden>
+      <section class="win-card">
+        <div class="medal" aria-hidden="true">🏆</div>
+        <h1 id="winTitle">Chúc mừng bạn đã chiến thắng!</h1>
+        <p>Bạn đã thắng một ván bi-a thật tuyệt. Thiệp mời tốt nghiệp đang chờ bạn mở.</p>
+        <a class="open-invitation" id="openInvitation" href="../../index.html?open=1">Mở thiệp tốt nghiệp</a>
+      </section>
+    </div>
+  <script>
+    const gameFrame = document.querySelector("iframe");
+    const winOverlay = document.getElementById("winOverlay");
+    window.addEventListener("message", (event) => {
+      if (event.origin !== window.location.origin || event.source !== gameFrame.contentWindow) return;
+      if (event.data?.type !== "graduation-billiards-win") return;
+      winOverlay.hidden = false;
+      document.getElementById("openInvitation").focus();
+    });
+  </script>
+  </body>
+</html>
