@@ -21,6 +21,7 @@
   let animationFrame = 0;
   let previousPointer = null;
   let lastPointerLaunch = 0;
+  const openingTimers = new Set();
 
   function resize() {
     pixelRatio = Math.min(window.devicePixelRatio || 1, 1.5);
@@ -159,12 +160,27 @@
 
   window.InvitationFireworks = {
     start() {
+      if (active) return;
       active = true;
+      previousPointer = null;
+      const openingFireworks = 8;
+      for (let index = 0; index < openingFireworks; index++) {
+        const spread = (index + 0.5) / openingFireworks;
+        const targetX = Math.max(20, Math.min(width - 20, spread * width + (Math.random() - 0.5) * width * 0.08));
+        const targetY = height * (0.1 + Math.random() * 0.58);
+        const timer = window.setTimeout(() => {
+          openingTimers.delete(timer);
+          launch(targetX, targetY);
+        }, index * 145);
+        openingTimers.add(timer);
+      }
     },
     stop() {
       active = false;
       fireworks.length = 0;
       previousPointer = null;
+      for (const timer of openingTimers) window.clearTimeout(timer);
+      openingTimers.clear();
       if (animationFrame) window.cancelAnimationFrame(animationFrame);
       animationFrame = 0;
       context.clearRect(0, 0, width, height);

@@ -341,7 +341,7 @@
       heartCount++;
       document.getElementById("heartCount").textContent = heartCount;
       document.getElementById("socialStatus").textContent = "Cảm ơn " + name + " đã gửi tim!";
-      launchHeart();
+      showActivityFlight({ type: "heart", name, detail: "đã gửi một trái tim" });
       fetch("/api/heart", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }) })
         .then(async (response) => { const data = await response.json(); if (!response.ok) throw new Error(data.error || "Không ghi nhận được tim."); return data; })
         .then((data) => { optimisticHearts = Math.max(0, optimisticHearts - 1); heartCount = Number(data.count || 0) + optimisticHearts; document.getElementById("heartCount").textContent = heartCount; refreshPublicActivity(); })
