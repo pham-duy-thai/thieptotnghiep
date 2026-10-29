@@ -16,6 +16,8 @@
       .title { overflow: hidden; color: #fff9e7; font-size: 12px; letter-spacing: .12em; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
       .credit { color: #b9b6a8; font-size: 11px; text-decoration: none; white-space: nowrap; }
       .credit:hover, .credit:focus-visible { color: #fff; }
+      .game-music { border: 1px solid #d8bd6b77; border-radius: 999px; padding: 7px 11px; background: #ffffff0a; color: #f1dda2; font: inherit; font-size: 11px; cursor: pointer; white-space: nowrap; }
+      .game-music:hover, .game-music:focus-visible { background: #ffffff18; color: #fff; outline: 2px solid #f1dda277; outline-offset: 2px; }
       iframe { display: block; width: 100%; height: 100%; border: 0; background: #11150f; }
       .win-overlay { position: fixed; z-index: 5; inset: 0; display: grid; place-items: center; padding: 20px; background: #080b09d9; backdrop-filter: blur(8px); }
       .win-overlay[hidden] { display: none; }
@@ -25,7 +27,7 @@
       .win-card p { margin: 0 0 24px; color: #e3ddcb; font-size: 14px; line-height: 1.6; }
       .open-invitation { display: inline-block; padding: 13px 23px; border-radius: 999px; background: #e4ca80; color: #231c10; font-size: 14px; font-weight: 700; text-decoration: none; }
       .open-invitation:hover, .open-invitation:focus-visible { background: #f4df9f; outline: 3px solid #fff5cc; outline-offset: 3px; }
-      @media (max-width: 520px) { .layout { grid-template-rows: 48px minmax(0, 1fr); } .topbar { gap: 8px; padding-right: max(10px, env(safe-area-inset-right)); padding-left: max(10px, env(safe-area-inset-left)); } .back { font-size: 12px; } .title { font-size: 10px; letter-spacing: .06em; } .credit { font-size: 10px; } }
+      @media (max-width: 520px) { .layout { grid-template-rows: 48px minmax(0, 1fr); } .topbar { gap: 8px; padding-right: max(10px, env(safe-area-inset-right)); padding-left: max(10px, env(safe-area-inset-left)); } .back { font-size: 12px; } .title { font-size: 10px; letter-spacing: .06em; } .credit { font-size: 10px; } .game-music { padding: 6px 8px; font-size: 10px; } }
     </style>
   </head>
   <body>
@@ -33,6 +35,7 @@
       <header class="topbar">
         <a class="back" href="../../index.html">‹ Quay lại thiệp mời</a>
         <span class="title">Bi-a 3D · Nine-ball</span>
+        <button class="game-music" id="gameMusicToggle" type="button" aria-pressed="false">♫ Bật nhạc</button>
         <a class="credit" href="https://github.com/tailuge/billiards" target="_blank" rel="noopener noreferrer">Mã nguồn mở</a>
       </header>
       <iframe
@@ -50,9 +53,26 @@
         <a class="open-invitation" id="openInvitation" href="../../index.html?open=1">Mở thiệp tốt nghiệp</a>
       </section>
     </div>
+  <audio id="gameMusic" src="../../nhacdemi.mp3" preload="auto" loop></audio>
   <script>
     const gameFrame = document.querySelector("iframe");
     const winOverlay = document.getElementById("winOverlay");
+    const gameMusic = document.getElementById("gameMusic");
+    const gameMusicToggle = document.getElementById("gameMusicToggle");
+    function setGameMusicState(playing) {
+      gameMusicToggle.textContent = playing ? "♫ Tắt nhạc" : "♫ Bật nhạc";
+      gameMusicToggle.setAttribute("aria-pressed", String(playing));
+    }
+    function startGameMusic() {
+      gameMusic.play().then(() => setGameMusicState(true)).catch(() => setGameMusicState(false));
+    }
+    gameMusicToggle.addEventListener("click", () => {
+      if (gameMusic.paused) startGameMusic();
+      else { gameMusic.pause(); setGameMusicState(false); }
+    });
+    gameMusic.addEventListener("play", () => setGameMusicState(true));
+    gameMusic.addEventListener("pause", () => setGameMusicState(false));
+    startGameMusic();
     window.addEventListener("message", (event) => {
       if (event.origin !== window.location.origin || event.source !== gameFrame.contentWindow) return;
       if (event.data?.type !== "graduation-billiards-win") return;
