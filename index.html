@@ -25,19 +25,46 @@
   <style>
     @media(max-width:480px){.scroll-toggle{right:10px;bottom:68px}.music-toggle{right:10px;bottom:12px}}
   </style>
+  <style>
+    .hero{min-height:100svh;padding:30px 18px;justify-content:center;background:#10233e;isolation:isolate;overflow:hidden}
+    .hero:before{inset:-3%;border:0;z-index:-2;background:linear-gradient(130deg,rgba(6,18,39,.74),rgba(12,37,70,.54)),url("https://jobtest.vn/hrblog/wp-content/uploads/2022/08/hoc-phi-dai-hoc-vinh-2.jpg") center/cover no-repeat;filter:blur(3px);transform:scale(1.04);z-index:0}
+    .hero:after{inset:13px;border:1px solid #f1dfbd66;z-index:2;pointer-events:none}
+    .boarding-pass{position:relative;width:min(440px,100%);padding:26px 26px 22px;border:1px solid #e2d4b57a;border-radius:13px;background:linear-gradient(155deg,#0c2441ed,#142f50e8 62%,#10233eea);box-shadow:0 22px 70px #020b1db0, inset 0 0 0 5px #ffffff08;color:#f8f5ef;backdrop-filter:blur(12px);text-align:center;z-index:1}
+    .boarding-top,.boarding-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;font:600 9px/1.4 "DM Sans",sans-serif;letter-spacing:.19em;text-transform:uppercase;color:#d9c99f}
+    .boarding-top{padding-bottom:17px;border-bottom:1px solid #e5d8bb55}
+    .boarding-seal{display:inline-grid;place-items:center;width:27px;height:27px;margin:0 auto 17px;border:1px solid #d9c99f;border-radius:50%;color:#e9d9b3;font:16px/1 "Playfair Display",serif}
+    .boarding-kicker{margin:0;color:#d8c797;font-size:10px;letter-spacing:.25em;text-transform:uppercase}
+    .boarding-pass h1{margin:11px 0 9px;color:#fff;font:500 clamp(34px,9vw,46px)/1.02 "Playfair Display",serif;letter-spacing:.025em}
+    .boarding-subtitle{margin:0 auto;max-width:310px;color:#e7e6e2;font:italic 15px/1.65 "Playfair Display",serif}
+    .boarding-rule{position:relative;margin:22px -26px 18px;border-top:1px dashed #d7c6969c}
+    .boarding-rule:before,.boarding-rule:after{content:"";position:absolute;top:-9px;width:17px;height:17px;border-radius:50%;background:#0d2645;box-shadow:inset 0 0 0 1px #e5d8bb45}
+    .boarding-rule:before{left:-9px}.boarding-rule:after{right:-9px}
+    .boarding-details{display:grid;grid-template-columns:1fr 1.2fr;gap:12px;text-align:left}
+    .boarding-detail{padding:6px 8px}.boarding-label{display:block;margin-bottom:6px;color:#c9ba94;font-size:9px;letter-spacing:.2em;text-transform:uppercase}.boarding-value{display:block;color:#fff;font:500 17px/1.35 "DM Sans",sans-serif}.boarding-value small{display:block;margin-top:3px;color:#d6d9dd;font-size:11px;font-weight:400}
+    .boarding-bottom{margin-top:19px;padding-top:14px;border-top:1px solid #e5d8bb55;color:#d6d9dd;font-size:8px}
+    .boarding-cta{display:inline-flex;justify-content:center;align-items:center;gap:9px;margin-top:20px;padding:12px 19px;border:1px solid #d9c99f;border-radius:3px;background:#e3d1a4;color:#12233a;text-decoration:none;font:700 10px "DM Sans",sans-serif;letter-spacing:.15em;text-transform:uppercase;transition:transform .2s,background .2s}
+    .boarding-cta:hover,.boarding-cta:focus-visible{transform:translateY(-2px);background:#f2e4bd;outline:2px solid #fff;outline-offset:3px}
+    .details{scroll-margin-top:18px}
+    @media(max-width:380px){.boarding-pass{padding-inline:21px}.boarding-rule{margin-inline:-21px}.boarding-value{font-size:15px}}
+  </style>
 </head>
 <body>
   <main class="page" id="invitation-card">
-    <section class="hero" aria-label="Lời chúc dành cho mọi người">
-      <div class="hero-art" aria-hidden="true"><div class="arch"></div><div class="laurel">❧</div></div>
-      <div class="hero-copy">
-        <div class="eyebrow">Gửi đến tất cả mọi người</div>
-        <h1>Chúc mọi người luôn vui vẻ!</h1>
-        <div class="study">Chúc bạn luôn bình an, hạnh phúc và gặp nhiều điều tốt đẹp</div>
-        <div class="uni">Thân gửi từ Phạm Duy Thái</div>
-        <div class="date">Một lời chúc dành cho tất cả</div>
-        <div class="scroll">Cuộn xuống để xem thêm&nbsp; ↓</div>
-      </div>
+    <section class="hero" aria-label="Lời mời dự lễ tốt nghiệp">
+      <article class="boarding-pass">
+        <div class="boarding-top"><span>Đại học Vinh &#183; 2026</span><span>Thiệp mời</span></div>
+        <div class="boarding-seal" aria-hidden="true">V</div>
+        <p class="boarding-kicker">Trân trọng kính mời</p>
+        <h1>Phạm Duy Thái</h1>
+        <p class="boarding-subtitle">Mời bạn đến chung vui và lưu lại khoảnh khắc tốt nghiệp đáng nhớ cùng mình.</p>
+        <div class="boarding-rule" aria-hidden="true"></div>
+        <div class="boarding-details">
+          <div class="boarding-detail"><span class="boarding-label">Ngày</span><span class="boarding-value">Thứ Bảy<small>07 &#183; 11 &#183; 2026</small></span></div>
+          <div class="boarding-detail"><span class="boarding-label">Địa điểm</span><span class="boarding-value">Trường Đại học Vinh<small>181 Lê Duẩn &#183; Thành phố Vinh</small></span></div>
+        </div>
+        <div class="boarding-bottom"><span>Lễ tốt nghiệp</span><span>VINH &#183; 2026</span></div>
+        <a class="boarding-cta" href="#event-details">Xem thông tin buổi lễ <span aria-hidden="true">&#8595;</span></a>
+      </article>
     </section>
     <section class="section">
       <div class="section-kicker">Một cột mốc đáng nhớ</div>
@@ -61,7 +88,7 @@
       <article class="memory-page"><div><p>“Hóa ra ngày mà chúng ta từng mong chờ, khi đến thật rồi, lại là ngày chẳng ai muốn.”</p><small>Ngày chia tay giảng đường</small></div></article>
       <article class="memory-page"><div><p>“Tạm biệt những ngày tháng vô tư nhất, tạm biệt phiên bản của chúng ta mà sau này chẳng thể quay lại.”</p><small>Thanh xuân · 2026</small></div></article>
     </section>
-    <section class="section details">
+    <section class="section details" id="event-details">
       <div class="section-kicker">Save the date</div>
       <h2>Hẹn gặp bạn nhé</h2>
       <div class="detail-card">
@@ -115,13 +142,14 @@
     <footer class="footer"><strong>Phạm Duy Thái</strong>MỘT NGÀY ĐÁNG NHỚ · 2026</footer>
   </main>
   <div id="activityFlights" aria-hidden="true"></div>
-  <audio id="backgroundMusic" src="nhacdemi.mp3" preload="auto" autoplay></audio>
+  <audio id="backgroundMusic" src="tinhve.mp3" preload="auto" autoplay></audio>
   <button class="scroll-toggle" id="scrollToggle" type="button" aria-pressed="false" hidden>Tạm dừng cuộn</button>
   <button class="music-toggle" id="musicToggle" type="button" aria-label="Bật nhạc" title="Bật nhạc">♫</button>
   <script>
     const music = document.getElementById("backgroundMusic");
     const musicToggle = document.getElementById("musicToggle");
-    const musicTracks = ["nhacdemi.mp3", "snaptik.vn_7673337476156853525.mp3"];
+    const musicTracks = ["tinhve.mp3", "nhacdemi.mp3"];
+    let currentTrackIndex = 0;
     const scrollToggle = document.getElementById("scrollToggle");
     scrollToggle.hidden = false;
     scrollToggle.textContent = "Bật tự động cuộn";
@@ -395,8 +423,8 @@
     music.addEventListener("play", () => setMusicState(true));
     music.addEventListener("pause", () => setMusicState(false));
     music.addEventListener("ended", function () {
-      const currentTrack = musicTracks.indexOf(music.getAttribute("src"));
-      music.src = musicTracks[(currentTrack + 1) % musicTracks.length];
+      currentTrackIndex = (currentTrackIndex + 1) % musicTracks.length;
+      music.src = musicTracks[currentTrackIndex];
       music.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
     });
     music.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
