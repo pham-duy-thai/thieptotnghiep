@@ -44,6 +44,8 @@
     .cover-open{display:inline-flex;align-items:center;gap:13px;margin-top:30px;padding:16px 31px;border:0;border-radius:999px;background:#243d5c;color:#fff;box-shadow:0 13px 24px #18315140;font:600 14px "DM Sans",sans-serif;cursor:pointer;transition:transform .2s,background .2s}
     .cover-open:hover,.cover-open:focus-visible{transform:translateY(-2px);background:#304f73;outline:3px solid #c6a34a;outline-offset:3px}
     .cover-open span{font-size:18px;line-height:1}
+    .page .hero{min-height:78vh;padding:46px 28px 38px;justify-content:flex-end;background:linear-gradient(180deg,#10233e38,#10233edb 76%),url("https://jobtest.vn/hrblog/wp-content/uploads/2022/08/hoc-phi-dai-hoc-vinh-2.jpg") center/cover no-repeat}
+    .page .hero .scroll{display:inline-block;margin-top:27px;color:#f2e8d2;text-decoration:none}
     .details{scroll-margin-top:18px}
     .social-stage{display:block;min-height:0;margin:28px 16px 34px;padding:0;background:transparent;color:#243d5c;text-align:left;overflow:visible}
     .guestbook-card{width:100%;padding:27px 20px 22px;border:1px solid #e4dccd;border-radius:8px;background:#fffdfa;box-shadow:0 12px 35px #25334b12}
@@ -81,6 +83,17 @@
     </div>
   </section>
   <main class="page" id="invitation-card" inert>
+    <section class="hero" aria-label="Lời mời dự lễ tốt nghiệp">
+      <div class="hero-art" aria-hidden="true"><div class="arch"></div><div class="laurel">❧</div></div>
+      <div class="hero-copy">
+        <div class="eyebrow">Lễ tốt nghiệp · 2026</div>
+        <h1>Phạm Duy Thái</h1>
+        <div class="study">Trân trọng kính mời bạn đến chung vui</div>
+        <div class="uni">Trường Đại học Vinh</div>
+        <div class="date">07 &#183; 11 &#183; 2026</div>
+        <a class="scroll" href="#event-details">Xem thông tin buổi lễ&nbsp; ↓</a>
+      </div>
+    </section>
 
     <section class="section">
       <div class="section-kicker">Một cột mốc đáng nhớ</div>
@@ -174,6 +187,7 @@
       openingScreen.classList.add("is-open");
       openingScreen.setAttribute("aria-hidden", "true");
       music.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
+      startAutoScroll();
     });
     const music = document.getElementById("backgroundMusic");
     const musicToggle = document.getElementById("musicToggle");
