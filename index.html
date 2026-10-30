@@ -8,7 +8,7 @@
   <title>Thư mời tốt nghiệp — Phạm Duy Thái</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
   <style>
     .activity-flight{position:fixed;z-index:8;left:-90%;top:var(--flight-top,35vh);display:flex;align-items:center;gap:10px;max-width:min(520px,88vw);padding:10px 17px 10px 12px;border:1px solid #fff9;border-radius:999px;background:linear-gradient(110deg,#fffaf2f2,#f6dedcf2);color:#5d2428;box-shadow:0 8px 34px #4010184a;pointer-events:none;white-space:normal;animation:activity-flight 8s linear forwards}.activity-flight .flight-icon{font-size:22px;flex:none}.activity-flight .flight-copy{font:500 13px/1.45 "DM Sans",sans-serif}.activity-flight strong{color:#671c24}.activity-flight.is-heart{border-color:#ffabbc;background:linear-gradient(110deg,#fff5fa,#ffd4e0);box-shadow:0 0 24px #ff3a7777,0 8px 34px #4010184a}.activity-flight.is-heart .flight-icon{font-size:34px;filter:drop-shadow(0 0 10px #ff235f);animation:heart-glow .75s ease-in-out infinite alternate}.activity-flight.is-wish{background:linear-gradient(110deg,#fffaf2,#ffefcd)}@keyframes activity-flight{0%{left:-95%;opacity:0;transform:translateY(12px) scale(.78)}8%{opacity:1}18%{transform:translateY(-7px) scale(1.04)}28%{transform:translateY(0) scale(1)}88%{opacity:1}100%{left:110%;opacity:0;transform:translateY(-10px) scale(.96)}}@keyframes heart-glow{to{transform:scale(1.35) rotate(12deg);filter:drop-shadow(0 0 18px #ff164d)}}@media(prefers-reduced-motion:reduce){.activity-flight,.activity-flight .flight-icon{animation-duration:.01ms!important}}
   </style>
@@ -26,46 +26,62 @@
     @media(max-width:480px){.scroll-toggle{right:10px;bottom:68px}.music-toggle{right:10px;bottom:12px}}
   </style>
   <style>
-    .hero{min-height:100svh;padding:30px 18px;justify-content:center;background:#10233e;isolation:isolate;overflow:hidden}
-    .hero:before{inset:-3%;border:0;z-index:-2;background:linear-gradient(130deg,rgba(6,18,39,.74),rgba(12,37,70,.54)),url("https://jobtest.vn/hrblog/wp-content/uploads/2022/08/hoc-phi-dai-hoc-vinh-2.jpg") center/cover no-repeat;filter:blur(3px);transform:scale(1.04);z-index:0}
-    .hero:after{inset:13px;border:1px solid #f1dfbd66;z-index:2;pointer-events:none}
-    .boarding-pass{position:relative;width:min(440px,100%);padding:26px 26px 22px;border:1px solid #e2d4b57a;border-radius:13px;background:linear-gradient(155deg,#0c2441ed,#142f50e8 62%,#10233eea);box-shadow:0 22px 70px #020b1db0, inset 0 0 0 5px #ffffff08;color:#f8f5ef;backdrop-filter:blur(12px);text-align:center;z-index:1}
-    .boarding-top,.boarding-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px;font:600 9px/1.4 "DM Sans",sans-serif;letter-spacing:.19em;text-transform:uppercase;color:#d9c99f}
-    .boarding-top{padding-bottom:17px;border-bottom:1px solid #e5d8bb55}
-    .boarding-seal{display:inline-grid;place-items:center;width:27px;height:27px;margin:0 auto 17px;border:1px solid #d9c99f;border-radius:50%;color:#e9d9b3;font:16px/1 "Playfair Display",serif}
-    .boarding-kicker{margin:0;color:#d8c797;font-size:10px;letter-spacing:.25em;text-transform:uppercase}
-    .boarding-pass h1{margin:11px 0 9px;color:#fff;font:500 clamp(34px,9vw,46px)/1.02 "Playfair Display",serif;letter-spacing:.025em}
-    .boarding-subtitle{margin:0 auto;max-width:310px;color:#e7e6e2;font:italic 15px/1.65 "Playfair Display",serif}
-    .boarding-rule{position:relative;margin:22px -26px 18px;border-top:1px dashed #d7c6969c}
-    .boarding-rule:before,.boarding-rule:after{content:"";position:absolute;top:-9px;width:17px;height:17px;border-radius:50%;background:#0d2645;box-shadow:inset 0 0 0 1px #e5d8bb45}
-    .boarding-rule:before{left:-9px}.boarding-rule:after{right:-9px}
-    .boarding-details{display:grid;grid-template-columns:1fr 1.2fr;gap:12px;text-align:left}
-    .boarding-detail{padding:6px 8px}.boarding-label{display:block;margin-bottom:6px;color:#c9ba94;font-size:9px;letter-spacing:.2em;text-transform:uppercase}.boarding-value{display:block;color:#fff;font:500 17px/1.35 "DM Sans",sans-serif}.boarding-value small{display:block;margin-top:3px;color:#d6d9dd;font-size:11px;font-weight:400}
-    .boarding-bottom{margin-top:19px;padding-top:14px;border-top:1px solid #e5d8bb55;color:#d6d9dd;font-size:8px}
-    .boarding-cta{display:inline-flex;justify-content:center;align-items:center;gap:9px;margin-top:20px;padding:12px 19px;border:1px solid #d9c99f;border-radius:3px;background:#e3d1a4;color:#12233a;text-decoration:none;font:700 10px "DM Sans",sans-serif;letter-spacing:.15em;text-transform:uppercase;transition:transform .2s,background .2s}
-    .boarding-cta:hover,.boarding-cta:focus-visible{transform:translateY(-2px);background:#f2e4bd;outline:2px solid #fff;outline-offset:3px}
+    body.has-cover{overflow:hidden}
+    body.has-cover .music-toggle,body.has-cover .scroll-toggle{display:none!important}
+    .opening-screen{position:fixed;z-index:20;inset:0;display:grid;place-items:center;overflow:hidden;padding:28px 20px;background:#f4f1eb;color:#152d4b;transition:opacity .75s ease,visibility .75s ease}
+    .opening-screen:before{content:"";position:absolute;inset:-4%;background:linear-gradient(rgba(247,244,237,.91),rgba(247,244,237,.91)),url("https://jobtest.vn/hrblog/wp-content/uploads/2022/08/hoc-phi-dai-hoc-vinh-2.jpg") center/cover no-repeat;filter:blur(5px);transform:scale(1.04)}
+    .opening-screen:after{content:"";position:absolute;inset:14px;border:1px solid #c6a34a44;pointer-events:none}
+    .opening-screen.is-open{opacity:0;visibility:hidden;pointer-events:none}
+    .opening-content{position:relative;z-index:1;width:min(560px,100%);text-align:center}
+    .cover-envelope{display:block;width:122px;height:102px;margin:0 auto 30px;overflow:visible}
+    .cover-spark{position:absolute;color:#e8c77d;font-size:18px;animation:cover-sparkle 2.4s ease-in-out infinite alternate}
+    .cover-spark.one{top:4px;left:calc(50% - 67px)}.cover-spark.two{top:-13px;left:calc(50% + 44px);animation-delay:.7s}
+    @keyframes cover-sparkle{to{opacity:.4;transform:translateY(-4px) scale(.88)}}
+    .cover-eyebrow{margin:0 0 10px;color:#223b5a;font:500 15px/1.4 "Cormorant Garamond",serif;letter-spacing:.18em}
+    .cover-title{margin:0;color:#142e4e;font:600 clamp(40px,8.5vw,58px)/.98 "Cormorant Garamond",serif;letter-spacing:.025em}
+    .cover-of{margin:2px 0 -1px;color:#405672;font:italic 22px "Cormorant Garamond",serif}
+    .cover-name{margin:0;color:#142e4e;font:600 clamp(43px,9vw,62px)/.96 "Cormorant Garamond",serif;letter-spacing:.015em}
+    .cover-open{display:inline-flex;align-items:center;gap:13px;margin-top:30px;padding:16px 31px;border:0;border-radius:999px;background:#243d5c;color:#fff;box-shadow:0 13px 24px #18315140;font:600 14px "DM Sans",sans-serif;cursor:pointer;transition:transform .2s,background .2s}
+    .cover-open:hover,.cover-open:focus-visible{transform:translateY(-2px);background:#304f73;outline:3px solid #c6a34a;outline-offset:3px}
+    .cover-open span{font-size:18px;line-height:1}
     .details{scroll-margin-top:18px}
-    @media(max-width:380px){.boarding-pass{padding-inline:21px}.boarding-rule{margin-inline:-21px}.boarding-value{font-size:15px}}
+    .social-stage{display:block;min-height:0;margin:28px 16px 34px;padding:0;background:transparent;color:#243d5c;text-align:left;overflow:visible}
+    .guestbook-card{width:100%;padding:27px 20px 22px;border:1px solid #e4dccd;border-radius:8px;background:#fffdfa;box-shadow:0 12px 35px #25334b12}
+    .guestbook-header{text-align:center}.guestbook-mark{margin-bottom:8px;color:#c6a34a;font-size:20px}.guestbook-header .section-kicker{color:#53657d}.guestbook-header h2{margin:8px 0 9px;color:#183452;font-size:29px}.guestbook-header p{max-width:340px;margin:0 auto;color:#7d7a74;font:italic 14px/1.65 "Playfair Display",serif}
+    .social-stage .wish-form{display:grid;width:100%;max-width:none;gap:10px;margin:21px 0 0}
+    .social-stage .wish-input{display:block;width:100%;min-width:0;border:1px solid #dfd9ce;border-radius:4px;background:#fff;color:#263c56;padding:12px 13px;font:13px/1.5 "DM Sans",sans-serif}
+    .social-stage .wish-input:focus{outline:2px solid #c6a34a88;border-color:#b89b5a}.social-stage textarea.wish-input{min-height:104px;resize:vertical}
+    .wish-form-footer{display:flex;align-items:center;justify-content:space-between;gap:12px}.wish-counter{color:#89877f;font-size:11px}
+    .social-stage .wish-send{border:0;border-radius:999px;background:#243d5c;color:#fff;padding:11px 20px;font:600 12px "DM Sans",sans-serif;cursor:pointer}
+    .social-stage .wish-send:hover{background:#304f73}.social-stage .wish-send:disabled{opacity:.55;cursor:wait}
+    .social-stage .social-actions{display:flex;justify-content:flex-end;gap:8px;margin:13px 0 0}
+    .social-stage .social-actions button{border:1px solid #d9d3c8;border-radius:30px;background:#fff;color:#4e6076;padding:8px 11px;font:500 11px "DM Sans",sans-serif;cursor:pointer}
+    .social-stage .public-activity{width:100%;margin:22px 0 0;padding:17px 15px;border:1px solid #e7e1d7;border-radius:6px;background:#fff;text-align:left}
+    .social-stage .public-activity h3{color:#354f6b;font:600 11px "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}
+    .social-stage .activity-summary{color:#77766f;font-size:11px;margin-bottom:12px}.social-stage .activity-list{max-height:210px;scrollbar-color:#c6a34a transparent}
+    .social-stage .activity-group+.activity-group{border-top:1px solid #ece7de;margin-top:12px;padding-top:12px}
+    .social-stage .activity-item{color:#4c5663;font-size:12px}.social-stage .activity-name{color:#243d5c}.social-stage .activity-empty{color:#8c8981}
+    .social-stage .social-count{position:static;display:block;margin:14px 0 0;color:#77766f;font-size:11px;text-align:center}
+    @media(max-width:380px){.cover-envelope{margin-bottom:24px}.cover-eyebrow{font-size:13px}.cover-open{margin-top:24px}.guestbook-card{padding:23px 15px}}
   </style>
 </head>
-<body>
-  <main class="page" id="invitation-card">
-    <section class="hero" aria-label="Lời mời dự lễ tốt nghiệp">
-      <article class="boarding-pass">
-        <div class="boarding-top"><span>Đại học Vinh &#183; 2026</span><span>Thiệp mời</span></div>
-        <div class="boarding-seal" aria-hidden="true">V</div>
-        <p class="boarding-kicker">Trân trọng kính mời</p>
-        <h1>Phạm Duy Thái</h1>
-        <p class="boarding-subtitle">Mời bạn đến chung vui và lưu lại khoảnh khắc tốt nghiệp đáng nhớ cùng mình.</p>
-        <div class="boarding-rule" aria-hidden="true"></div>
-        <div class="boarding-details">
-          <div class="boarding-detail"><span class="boarding-label">Ngày</span><span class="boarding-value">Thứ Bảy<small>07 &#183; 11 &#183; 2026</small></span></div>
-          <div class="boarding-detail"><span class="boarding-label">Địa điểm</span><span class="boarding-value">Trường Đại học Vinh<small>181 Lê Duẩn &#183; Thành phố Vinh</small></span></div>
-        </div>
-        <div class="boarding-bottom"><span>Lễ tốt nghiệp</span><span>VINH &#183; 2026</span></div>
-        <a class="boarding-cta" href="#event-details">Xem thông tin buổi lễ <span aria-hidden="true">&#8595;</span></a>
-      </article>
-    </section>
+<body class="has-cover">
+  <section class="opening-screen" id="openingScreen" aria-label="Thư mời tốt nghiệp">
+    <div class="opening-content">
+      <span class="cover-spark one" aria-hidden="true">&#10022;</span><span class="cover-spark two" aria-hidden="true">&#10022;</span>
+      <svg class="cover-envelope" viewBox="0 0 130 104" role="img" aria-label="Phong bì thư mời">
+        <rect x="15" y="28" width="100" height="64" rx="8" fill="#e9e5d9" stroke="#c6a34a" stroke-width="2"/>
+        <path d="M16 31 65 66l49-35M59 51q6 10 12 0" fill="none" stroke="#c6a34a" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p class="cover-eyebrow">THƯ MỜI THAM DỰ</p>
+      <h1 class="cover-title">LỄ TỐT NGHIỆP</h1>
+      <p class="cover-of">của</p>
+      <p class="cover-name">PHẠM DUY THÁI</p>
+      <button class="cover-open" id="openInvitation" type="button">Mở thiệp <span aria-hidden="true">&#8594;</span></button>
+    </div>
+  </section>
+  <main class="page" id="invitation-card" inert>
+
     <section class="section">
       <div class="section-kicker">Một cột mốc đáng nhớ</div>
       <h2>Thư mời dự lễ tốt nghiệp</h2>
@@ -131,13 +147,18 @@
         <button class="rsvp-submit" type="submit">Gửi xác nhận</button><div class="rsvp-status" id="rsvpStatus" aria-live="polite"></div>
       </form>
     </section>
-    <section class="social-stage" aria-label="Gửi lời chúc">
-      <div class="section-kicker" style="color:#efc9a3">Chia sẻ niềm vui</div><h2>Hộp quà yêu thương</h2><div class="present" aria-hidden="true">🎁</div>
-      <p>Cảm ơn bạn đã đồng hành và chúc phúc cho hành trình mới. Niềm vui sẽ trọn vẹn hơn khi có bạn!</p>
-      <form class="wish-form" id="wishForm"><input class="wish-input" id="wishText" type="text" maxlength="140" placeholder="Gửi lời chúc..." aria-label="Lời chúc" required><button class="wish-send" type="submit">Gửi</button></form>
-      <div class="social-actions"><button id="heartButton" type="button">♡ Bắn tim <span id="heartCount">0</span></button><button id="cheerButton" type="button">🎉 Gửi lời chúc</button></div>
-      <div class="public-activity" aria-live="polite"><div class="activity-group"><h3>Đã xác nhận</h3><div class="activity-list" id="publicRsvps"><div class="activity-empty">Đang tải danh sách…</div></div></div><div class="activity-group"><h3>Lời chúc</h3><div class="activity-list" id="publicWishes"><div class="activity-empty">Đang tải lời chúc…</div></div></div><div class="activity-summary" id="publicSummary">Đang cập nhật lượt tim…</div></div>
-      <div class="social-count" id="socialStatus" aria-live="polite">Hãy để lại lời chúc cho Thái nhé</div>
+    <section class="social-stage" aria-label="Sổ lưu bút, gửi lời chúc">
+      <div class="guestbook-card">
+        <header class="guestbook-header"><div class="guestbook-mark" aria-hidden="true">&#10022;</div><div class="section-kicker">Lưu giữ khoảnh khắc</div><h2>Sổ lưu bút</h2><p>Gửi Thái một lời chúc cho hành trình mới nhé.</p></header>
+        <form class="wish-form" id="wishForm">
+          <input class="wish-input" id="wishName" type="text" maxlength="60" placeholder="Tên của bạn" aria-label="Tên của bạn" required>
+          <textarea class="wish-input" id="wishText" maxlength="140" rows="4" placeholder="Viết lời chúc của bạn..." aria-label="Lời chúc" required></textarea>
+          <div class="wish-form-footer"><span class="wish-counter" id="wishCharCount">0/140</span><button class="wish-send" type="submit">Gửi lời chúc</button></div>
+        </form>
+        <div class="social-actions"><button id="heartButton" type="button">&#9825; Gửi tim <span id="heartCount">0</span></button><button id="cheerButton" type="button">&#128161; Gợi ý lời chúc</button></div>
+        <div class="public-activity" aria-live="polite"><div class="activity-summary" id="publicSummary">Đang cập nhật lượt tim...</div><div class="activity-group"><h3>Lời chúc</h3><div class="activity-list" id="publicWishes"><div class="activity-empty">Đang tải lời chúc...</div></div></div><div class="activity-group"><h3>Xác nhận tham dự</h3><div class="activity-list" id="publicRsvps"><div class="activity-empty">Đang tải danh sách...</div></div></div></div>
+        <div class="social-count" id="socialStatus" aria-live="polite">Hãy để lại lời chúc cho Thái nhé</div>
+      </div>
     </section>
     <footer class="footer"><strong>Phạm Duy Thái</strong>MỘT NGÀY ĐÁNG NHỚ · 2026</footer>
   </main>
@@ -146,6 +167,14 @@
   <button class="scroll-toggle" id="scrollToggle" type="button" aria-pressed="false" hidden>Tạm dừng cuộn</button>
   <button class="music-toggle" id="musicToggle" type="button" aria-label="Bật nhạc" title="Bật nhạc">♫</button>
   <script>
+    const openingScreen = document.getElementById("openingScreen");
+    document.getElementById("openInvitation").addEventListener("click", function () {
+      document.getElementById("invitation-card").removeAttribute("inert");
+      document.body.classList.remove("has-cover");
+      openingScreen.classList.add("is-open");
+      openingScreen.setAttribute("aria-hidden", "true");
+      music.play().then(() => setMusicState(true)).catch(() => setMusicState(false));
+    });
     const music = document.getElementById("backgroundMusic");
     const musicToggle = document.getElementById("musicToggle");
     const musicTracks = ["tinhve.mp3", "nhacdemi.mp3"];
@@ -343,9 +372,12 @@
         .catch((error) => { status.textContent = error.message + " Nếu đang mở file trực tiếp, hãy chạy bằng Vercel Dev."; })
         .finally(() => { submit.disabled = false; });
     });
+    document.getElementById("wishText").addEventListener("input", function () {
+      document.getElementById("wishCharCount").textContent = this.value.length + "/140";
+    });
     document.getElementById("wishForm").addEventListener("submit", function (event) {
       event.preventDefault();
-      const name = document.getElementById("guestName").value.trim() || "Khách mời";
+      const name = document.getElementById("wishName").value.trim() || "Khách mời";
       const input = document.getElementById("wishText");
       const message = input.value.trim();
       if (!message) return;
@@ -355,12 +387,12 @@
       document.getElementById("socialStatus").textContent = "Cảm ơn " + name + " đã gửi lời chúc!";
       fetch("/api/wish", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, message }) })
         .then(async (response) => { const data = await response.json(); if (!response.ok) throw new Error(data.error || "Gửi lời chúc chưa thành công."); return data; })
-        .then(() => { input.value = ""; refreshPublicActivity(); })
+        .then(() => { input.value = ""; document.getElementById("wishCharCount").textContent = "0/140"; refreshPublicActivity(); })
         .catch((error) => { document.getElementById("socialStatus").textContent = "Lời chúc đã hiện trên thiết bị này nhưng chưa lưu vào cơ sở dữ liệu: " + error.message; })
         .finally(() => { sendButton.disabled = false; });
     });
     document.getElementById("heartButton").addEventListener("click", function () {
-      const name = document.getElementById("guestName").value.trim() || "Khách mời";
+      const name = document.getElementById("wishName").value.trim() || "Khách mời";
       optimisticHearts++;
       heartCount++;
       document.getElementById("heartCount").textContent = heartCount;
@@ -372,14 +404,10 @@
         .catch((error) => { document.getElementById("socialStatus").textContent = "Tim đã hiện trên thiết bị này nhưng chưa lưu vào cơ sở dữ liệu: " + error.message; });
     });
     document.getElementById("cheerButton").addEventListener("click", function () {
-      const name = document.getElementById("guestName").value.trim() || "Khách mời";
-      const message = "Chúc mừng Thái, thật tự hào về bạn! 🎓";
-      showWish(name, message);
-      document.getElementById("socialStatus").textContent = "Cảm ơn " + name + " đã gửi lời chúc!";
-      fetch("/api/wish", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name, message }) })
-        .then(async (response) => { const data = await response.json(); if (!response.ok) throw new Error(data.error || "Gửi lời chúc chưa thành công."); return data; })
-        .then(refreshPublicActivity)
-        .catch((error) => { document.getElementById("socialStatus").textContent = "Lời chúc đã hiện trên thiết bị này nhưng chưa lưu vào cơ sở dữ liệu: " + error.message; });
+      const input = document.getElementById("wishText");
+      if (!input.value.trim()) input.value = "Ch\u00fac m\u1eebng Th\u00e1i t\u1ed1t nghi\u1ec7p! Ch\u00fac b\u1ea1n lu\u00f4n v\u1eefng b\u01b0\u1edbc v\u00e0 th\u00e0nh c\u00f4ng tr\u00ean ch\u1eb7ng \u0111\u01b0\u1eddng m\u1edbi! \u{1f393}";
+      document.getElementById("wishCharCount").textContent = input.value.length + "/140";
+      input.focus();
     });
     function setMusicState(playing) {
       musicToggle.classList.toggle("is-playing", playing);
