@@ -50,6 +50,14 @@
     .social-stage{display:block;min-height:0;margin:28px 16px 34px;padding:0;background:transparent;color:#243d5c;text-align:left;overflow:visible}
     .guestbook-card{width:100%;padding:27px 20px 22px;border:1px solid #e4dccd;border-radius:8px;background:#fffdfa;box-shadow:0 12px 35px #25334b12}
     .guestbook-header{text-align:center}.guestbook-mark{margin-bottom:8px;color:#c6a34a;font-size:20px}.guestbook-header .section-kicker{color:#53657d}.guestbook-header h2{margin:8px 0 9px;color:#183452;font-size:29px}.guestbook-header p{max-width:340px;margin:0 auto;color:#7d7a74;font:italic 14px/1.65 "Playfair Display",serif}
+    .rsvp-panel .guestbook-header h2,.wishes-panel .guestbook-header h2{color:#183452}
+    .guestbook-divider{display:flex;align-items:center;gap:12px;margin:25px 0;color:#c6a34a}.guestbook-divider:before,.guestbook-divider:after{content:"";height:1px;background:#e8e0d3;flex:1}.guestbook-divider span{font-size:15px}
+    .guestbook-card .rsvp-card{max-width:none;margin:17px 0 0;padding:0;border:0;border-radius:0;box-shadow:none;background:transparent}
+    .guestbook-card .rsvp-card input[type=text],.guestbook-card .rsvp-card select{width:100%;border:1px solid #dfd9ce;border-radius:4px;background:#fff;color:#263c56;padding:11px 12px;font:13px "DM Sans",sans-serif}
+    .guestbook-card .rsvp-card .radio-line{color:#4c5663}.guestbook-card .rsvp-card input[type=radio]{accent-color:#243d5c}
+    .guestbook-card .rsvp-submit{border-radius:999px;background:#243d5c;color:#fff;padding:12px 20px;cursor:pointer}
+    .rsvp-list{margin-top:18px;padding-top:14px;border-top:1px solid #ece7de}.rsvp-list h3{color:#354f6b;font:600 11px "DM Sans",sans-serif;letter-spacing:.12em;text-transform:uppercase;margin:0 0 8px}
+    .heart-total{display:flex;align-items:center;justify-content:center;gap:9px;margin:17px auto 2px;padding:10px 15px;width:max-content;max-width:100%;border:1px solid #e7ddca;border-radius:999px;background:#faf7f0;color:#354f6b;font-size:12px}.heart-total-icon{color:#bd5960;font-size:16px}.heart-total strong{color:#183452;font:700 18px "DM Sans",sans-serif;font-variant-numeric:tabular-nums}
     .social-stage .wish-form{display:grid;width:100%;max-width:none;gap:10px;margin:21px 0 0}
     .social-stage .wish-input{display:block;width:100%;min-width:0;border:1px solid #dfd9ce;border-radius:4px;background:#fff;color:#263c56;padding:12px 13px;font:13px/1.5 "DM Sans",sans-serif}
     .social-stage .wish-input:focus{outline:2px solid #c6a34a88;border-color:#b89b5a}.social-stage textarea.wish-input{min-height:104px;resize:vertical}
@@ -149,28 +157,33 @@
       <h2>Rất mong được đón bạn</h2>
       <p>Cảm ơn bạn đã luôn đồng hành và cổ vũ mình. Hẹn gặp bạn tại lễ tốt nghiệp nhé!</p>
     </section>
-    <section class="rsvp" aria-label="Xác nhận tham dự">
-      <form class="rsvp-card" id="rsvpForm">
-        <h2>Xác nhận tham dự</h2>
-        <label class="field-label" for="guestName">Họ và tên</label><input id="guestName" name="guestName" type="text" placeholder="Nhập tên của bạn" required maxlength="60">
-        <span class="field-label">Bạn sẽ tham dự chứ?</span>
-        <label class="radio-line"><input type="radio" name="attendance" value="Có, tôi sẽ tham dự" checked> Có, tôi sẽ tham dự</label>
-        <label class="radio-line"><input type="radio" name="attendance" value="Tôi bận, rất tiếc không thể tham dự"> Tôi bận, rất tiếc không thể tham dự</label>
-        <label class="field-label" for="guestCount">Số lượng người tham dự</label><select id="guestCount" name="guestCount"><option value="1">1 người</option><option value="2">2 người</option><option value="3">3 người</option><option value="4">4 người</option></select>
-        <button class="rsvp-submit" type="submit">Gửi xác nhận</button><div class="rsvp-status" id="rsvpStatus" aria-live="polite"></div>
-      </form>
-    </section>
-    <section class="social-stage" aria-label="Sổ lưu bút, gửi lời chúc">
+    <section class="social-stage" aria-label="Xác nhận tham dự và sổ lưu bút">
       <div class="guestbook-card">
-        <header class="guestbook-header"><div class="guestbook-mark" aria-hidden="true">&#10022;</div><div class="section-kicker">Lưu giữ khoảnh khắc</div><h2>Sổ lưu bút</h2><p>Gửi Thái một lời chúc cho hành trình mới nhé.</p></header>
-        <form class="wish-form" id="wishForm">
-          <input class="wish-input" id="wishName" type="text" maxlength="60" placeholder="Tên của bạn" aria-label="Tên của bạn" required>
-          <textarea class="wish-input" id="wishText" maxlength="140" rows="4" placeholder="Viết lời chúc của bạn..." aria-label="Lời chúc" required></textarea>
-          <div class="wish-form-footer"><span class="wish-counter" id="wishCharCount">0/140</span><button class="wish-send" type="submit">Gửi lời chúc</button></div>
-        </form>
-        <div class="social-actions"><button id="heartButton" type="button">&#9825; Gửi tim <span id="heartCount">0</span></button><button id="cheerButton" type="button">&#128161; Gợi ý lời chúc</button></div>
-        <div class="public-activity" aria-live="polite"><div class="activity-summary" id="publicSummary">Đang cập nhật lượt tim...</div><div class="activity-group"><h3>Lời chúc</h3><div class="activity-list" id="publicWishes"><div class="activity-empty">Đang tải lời chúc...</div></div></div><div class="activity-group"><h3>Xác nhận tham dự</h3><div class="activity-list" id="publicRsvps"><div class="activity-empty">Đang tải danh sách...</div></div></div></div>
-        <div class="social-count" id="socialStatus" aria-live="polite">Hãy để lại lời chúc cho Thái nhé</div>
+        <section class="rsvp-panel" aria-labelledby="rsvpHeading">
+          <header class="guestbook-header"><div class="section-kicker">Ngày vui sẽ trọn vẹn hơn khi có bạn</div><h2 id="rsvpHeading">Xác nhận tham dự</h2><p>Cho Thái biết bạn có thể đến chung vui không nhé.</p></header>
+          <form class="rsvp-card" id="rsvpForm">
+            <label class="field-label" for="guestName">Họ và tên</label><input id="guestName" name="guestName" type="text" placeholder="Nhập tên của bạn" required maxlength="60">
+            <span class="field-label">Bạn sẽ tham dự chứ?</span>
+            <label class="radio-line"><input type="radio" name="attendance" value="Có, tôi sẽ tham dự" checked> Có, tôi sẽ tham dự</label>
+            <label class="radio-line"><input type="radio" name="attendance" value="Tôi bận, rất tiếc không thể tham dự"> Tôi bận, rất tiếc không thể tham dự</label>
+            <label class="field-label" for="guestCount">Số lượng người tham dự</label><select id="guestCount" name="guestCount"><option value="1">1 người</option><option value="2">2 người</option><option value="3">3 người</option><option value="4">4 người</option></select>
+            <button class="rsvp-submit" type="submit">Gửi xác nhận</button><div class="rsvp-status" id="rsvpStatus" aria-live="polite"></div>
+          </form>
+          <div class="rsvp-list activity-group"><h3>Danh sách tham dự</h3><div class="activity-list" id="publicRsvps"><div class="activity-empty">Đang tải danh sách...</div></div></div>
+        </section>
+        <div class="guestbook-divider" aria-hidden="true"><span>✦</span></div>
+        <section class="wishes-panel" aria-labelledby="wishesHeading">
+          <header class="guestbook-header"><div class="guestbook-mark" aria-hidden="true">&#10022;</div><div class="section-kicker">Lưu giữ khoảnh khắc</div><h2 id="wishesHeading">Sổ lưu bút</h2><p>Gửi Thái một lời chúc cho hành trình mới nhé.</p></header>
+          <div class="heart-total" aria-live="polite"><span class="heart-total-icon" aria-hidden="true">&#9829;</span><strong id="heartCount">0</strong><span>lượt gửi tim</span></div>
+          <form class="wish-form" id="wishForm">
+            <input class="wish-input" id="wishName" type="text" maxlength="60" placeholder="Tên của bạn" aria-label="Tên của bạn" required>
+            <textarea class="wish-input" id="wishText" maxlength="140" rows="4" placeholder="Viết lời chúc của bạn..." aria-label="Lời chúc" required></textarea>
+            <div class="wish-form-footer"><span class="wish-counter" id="wishCharCount">0/140</span><button class="wish-send" type="submit">Gửi lời chúc</button></div>
+          </form>
+          <div class="social-actions"><button id="heartButton" type="button">&#9825; Gửi tim</button><button id="cheerButton" type="button">&#128161; Gợi ý lời chúc</button></div>
+          <div class="public-activity" aria-live="polite"><div class="activity-summary" id="publicSummary">Đang cập nhật hoạt động...</div><div class="activity-group"><h3>Lời chúc</h3><div class="activity-list" id="publicWishes"><div class="activity-empty">Đang tải lời chúc...</div></div></div></div>
+          <div class="social-count" id="socialStatus" aria-live="polite">Hãy để lại lời chúc cho Thái nhé</div>
+        </section>
       </div>
     </section>
     <footer class="footer"><strong>Phạm Duy Thái</strong>MỘT NGÀY ĐÁNG NHỚ · 2026</footer>
@@ -369,7 +382,8 @@
       }
     }
     refreshPublicActivity();
-    window.setInterval(refreshPublicActivity, 12000);
+    window.setInterval(refreshPublicActivity, 5000);
+    document.addEventListener("visibilitychange", () => { if (!document.hidden) refreshPublicActivity(); });
     document.getElementById("rsvpForm").addEventListener("submit", function (event) {
       event.preventDefault();
       const name = document.getElementById("guestName").value.trim();
@@ -415,7 +429,7 @@
       fetch("/api/heart", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ name }) })
         .then(async (response) => { const data = await response.json(); if (!response.ok) throw new Error(data.error || "Không ghi nhận được tim."); return data; })
         .then((data) => { optimisticHearts = Math.max(0, optimisticHearts - 1); heartCount = Number(data.count || 0) + optimisticHearts; document.getElementById("heartCount").textContent = heartCount; refreshPublicActivity(); })
-        .catch((error) => { document.getElementById("socialStatus").textContent = "Tim đã hiện trên thiết bị này nhưng chưa lưu vào cơ sở dữ liệu: " + error.message; });
+        .catch((error) => { optimisticHearts = Math.max(0, optimisticHearts - 1); heartCount = Math.max(0, heartCount - 1); document.getElementById("heartCount").textContent = heartCount; document.getElementById("socialStatus").textContent = "Tim chưa lưu được vào cơ sở dữ liệu: " + error.message; });
     });
     document.getElementById("cheerButton").addEventListener("click", function () {
       const input = document.getElementById("wishText");
